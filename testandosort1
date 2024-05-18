@@ -1,0 +1,29 @@
+import java.util.Arrays;
+import java.util.Random;
+
+public class funçcoessort {
+
+	public static void main(String[] args) {
+		int[] numeros = new int[20];
+		numgen(numeros);
+		shownum(numeros);
+		sort(numeros);
+	}
+	public static void numgen(int[] v) {
+		Random rand = new Random();
+		for (int i = 0; i < v.length; i++) {
+			v[i] = rand.nextInt(100);
+		}
+	}
+
+	public static void shownum(int[] v) {
+		for (int i = 0; i < v.length; i++) {
+			System.out.println(v[i]);
+		}
+		System.out.println(" ");
+	}
+	public static void sort (int []v) {
+		Arrays.sort(v);
+		System.out.println(Arrays.toString(v));
+	}
+}
