@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class somenteprimos {
+
+    public static void main(String[] args) {
+        ArrayList<Integer> numerosprimos = new ArrayList<Integer>();
+        Scanner scan = new Scanner(System.in);
+        int numero;
+        System.out.println("Insira um número primo:");
+        numero = scan.nextInt();
+        while (primo(numero)) {
+            numerosprimos.add(numero);
+            System.out.println("Insira um número primo:");
+            numero = scan.nextInt();
+        }
+        System.out.println("Você inseriu um número que não é primo.");
+        System.out.println("");
+        System.out.println("");
+        digite(numerosprimos);
+        System.out.println("Esses são os números primos.");
+    }
+
+    public static boolean primo(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void digite(ArrayList<Integer> v) {
+        for (int i = 0; i < v.size(); i++) {
+            System.out.println(v.get(i));
+        }
+    }
+}
